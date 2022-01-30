@@ -1,0 +1,98 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 50%;
+    padding: 1em;
+}
+
+.column-l {
+    width: 25%;
+    background-color: #aaa;
+}
+
+.column-r {
+    width: 75%;
+    background-color: #bbb;
+}
+
+.column-all {
+    width: 100%;
+    background-color: coral;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.row-main, .column-main {
+    min-height: 50em;
+}
+
+.clean-list li {
+    display: inline;
+
+}
+
+.horizontal-list li {
+    margin-bottom: 1em;
+}
+
+li {
+    list-style-type: none;
+    padding: 0em;
+    margin: 0em;
+    float: left;
+}
+
+li a {
+    text-decoration: none;
+    display: block;
+    padding: 0em 1em;
+    line-height: 2em;
+}
+.clean-list li a {
+    color:black;
+}
+.active {
+    color:blue;
+}
+
+.title-name {
+    font-weight: bold;
+    font-size: 2em;
+    margin-right: 1em;
+}
+
+.title-small {
+    font-weight: bold;
+}
+
+.copywrite {
+    font: var(--font_2)
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+    .column {
+        width: 100%;
+    }
+
+    .row-main, .column-main {
+        min-height: 1em;
+    }
+}
+
+:root {
+    --font_2: normal normal normal 14px/1.4em avenir-lt-w01_35-light1475496, avenir-lt-w05_35-light, sans-serif;
+}
