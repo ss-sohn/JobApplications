@@ -23,6 +23,7 @@ Vue.component("primary-options", {
         setActive(info, e) {
             this.$parent.currentPrimarySelector=info.sortSelector;
             this.$parent.setActiveTag("primary-option",e);
+            this.$parent.setActiveTag("title-option",e);
         },
     },
     mounted() {
@@ -50,12 +51,6 @@ Vue.component("title-options",{
         },
         setActive(info, e) {
             this.$parent.setActiveTag("title-option",e);
-            var temp=this.$parent.filterBySelector(
-                this.$parent.workHistory,
-                this.$parent.currentPrimarySelector,"title","Teacher").sort()
-            console.log(this.$parent.filterBySelector(
-                this.$parent.workHistory,
-                "task",this.$parent.currentPrimarySelector,info).sort());
             this.$parent.currentTitleSelector=info;
         }
     }
@@ -109,7 +104,9 @@ new Vue({
             for (var i = 0; i < allTargets.length; i++) {
                 allTargets[i].classList.remove("active-display");
             }
+            if(e){
             e.target.classList.add("active-display");
+            }
         }
     }
 });

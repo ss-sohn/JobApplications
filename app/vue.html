@@ -24,7 +24,7 @@
                 </primary-options>
                 <template id="primary-option-tpl">
                     <div>
-                        <ul>
+                        <ul class="horizontal-list">
                             <li v-for="(item, i) in items" :key="i" @mouseover="hoveringEffect"
                                 @mouseout="endHoveringEffect">
                                 <slot v-bind="{item, setActive}"></slot>
@@ -46,7 +46,7 @@
                     </title-options>
                     <template id="title-option-tpl">
                         <div>
-                            <ul class="horizontal-list">
+                            <ul class="vertical-list">
                                 <li v-for="(item, i) in optionFilter" :key="i" @mouseover="hoveringEffect"
                                     @mouseout="endHoveringEffect">
                                     <slot v-bind="{item, setActive}"></slot>
@@ -59,7 +59,7 @@
             <div class="column column-r column-main">
                 <ul>
                     <information-output>
-                        <template slot-scope="{item, setActive}">
+                        <template slot-scope="{item}">
                             <a class="title-option">
                                 {{item}}
                             </a>
@@ -67,9 +67,9 @@
                     </information-output>
                     <template id="information-output-tpl">
                         <div>
-                            <ul>
+                            <ul class="vertical-list">
                                 <li v-for="(item, i) in optionFilter" :key="i">
-                                    <slot v-bind="{item, setActive}"></slot>
+                                    <slot v-bind="{item}"></slot>
                                 </li>
                             </ul>
                         </div>
